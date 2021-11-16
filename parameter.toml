@@ -1,0 +1,28 @@
+### Can be commented like this one...
+
+## Risk-groups parameters ##
+Exp_claims =  { "A": 0.01,  "B": 0.02}    # 
+Ratio_of_types =  { "A": 50,  "B": 50}      
+max_nbr_of_claims = 2
+type_of_distribution = "d"
+# Can be d - or P poisson
+#IF the max_nbr_of_claims, then the type_of_distribution is "d"
+
+
+
+
+
+nbr_of_classes =  5
+model_type = "stp"
+add_constraints = [], 
+rule_type = "S"
+premium_type = "TR1",
+Transition_rules =  [1, -9]
+file_name =  "optimal_solution.xlsx"
+solver = "Gurobi"
+periods =  0
+approx = 0
+class_min = 3
+class_max = 100
+consol = 1
+round = 4
