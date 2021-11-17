@@ -2,7 +2,6 @@
  >> read parameters
 """
 
-import json
 import calculation
 import tomli
 
@@ -14,81 +13,61 @@ def exec(parameter_file = 'parameter.toml', setup_folder = "."):
     with open(parameter_file, "rb") as f:
         Parameters = tomli.load(f)
     
+    #Calculate the claim number distribution   
+    Parameters["Prob_of_claims"] = setup.distribution(Parameters)
     
     
-    # # with open(parameter_file) as f:
-    # #     P = json.load(f)
-    # #Setup
-    # with open(setup_folder+'/setup/'+P["setup"]+'.json') as f:
-    #     Parameters = json.load(f)
-
-
-    #change the raw-parameters into usable parameters for the other parts.
-
-    """number of classes"""
-    Parameters["nbr_of_classes"] = P["nbr_of_classes"]
+    # """Add constraints"""
+    Parameters["irreducibility"], Parameters["profit"], Parameters["one_class"]  = setup.additional_constraints(Parameters)
+    
+    
+    # """ Model type """
+    # #Define the type of the model
+    Parameters["Premiums"], Parameters["Transition_rules"] = setup.specific_parameter(Parameters)
     
 
-    
-    """Probability of claims- number of claims"""
-    Parameters["max_nbr_of_claims"] = P["max_nbr_of_claims"]
-    
-    
-    Parameters["Prob_of_claims"] = setup.distribution(P, Parameters)
-    
-    
-    """Add constraints"""
-    Parameters["irreducibility"], Parameters["profit"], Parameters["one_class"]  = setup.additional_constraints(P)
-    
-    
-    """ Model type """
-    #Define the type of the model
-    Parameters["model_type"] = P["model_type"]
-    Parameters["Premiums"], Parameters["Transition_rules"] = setup.specific_parameter(P, Parameters)
-    
-
-    """ Transition rule type """    
-    #S-Unified -- M --Not unified
-    Parameters["rule_type"]  = P["rule_type"]
+    # """ Transition rule type """    
+    # #S-Unified -- M --Not unified
+    # Parameters["rule_type"]  = P["rule_type"]
 
 
-    Parameters["file_name"] = P["file_name"]
-    """ Solver """   
-    Parameters["solver"]  = P["solver"]
+    # Parameters["file_name"] = P["file_name"]
+    # """ Solver """   
+    # Parameters["solver"]  = P["solver"]
 
-    """ multi-period-periods"""
-    Parameters["periods"] = P["periods"]
+    # """ multi-period-periods"""
+    # Parameters["periods"] = P["periods"]
     
-    """ Approximation """
-    if P["approx"] != 0:
-        Parameters["approx"] = P["approx"]
-    else:
-        Parameters["approx"] = None
+    # """ Approximation """
+    # if P["approx"] != 0:
+    #     Parameters["approx"] = P["approx"]
+    # else:
+    #     Parameters["approx"] = None
         
-    Parameters["class_min"] = P["class_min"]    
-    Parameters["class_max"] = P["class_max"]
-    Parameters["premium_type"] = P["premium_type"]
+    # Parameters["class_min"] = P["class_min"]    
+    # Parameters["class_max"] = P["class_max"]
+    # Parameters["premium_type"] = P["premium_type"]
     
     
-    if P["consol"] == 0:
-        Parameters["consol"] = False
-    else:
-        Parameters["consol"] = True
+    # if P["consol"] == 0:
+    #     Parameters["consol"] = False
+    # else:
+    #     Parameters["consol"] = True
         
-    
-    Parameters["round"] = P["round"]
+  
     
     
     return Parameters
 
 
 class setup:
-    def distribution(P, Data):
-        """ setups the distribution of claims """
-        if P["type_of_distribution"]=="d" and P["max_nbr_of_claims"] == 1:
-            Prob_of_claims = calculation.distribution.Binary(Data['Exp_claims'])
-        elif P["type_of_distribution"]=="pois" or (P["max_nbr_of_claims"] > 1):
-            Prob_of_claims = calculation.distribution.Poisson(Data['Exp_claims'], P["max_nbr_of_claims"])
+    def distribution(Parameters):
+        """ setups the distribution of claims - if there can happen multiple claims, then it is Poisson distribution """
+        
+        if Parameters["max_nbr_of_claims"] == 1:
+            Prob_of_claims = calculation.distribution.Binary(Parameters['Exp_claims'])
+        elif Parameters["max_nbr_of_claims"] > 1:
+            Prob_of_claims = calculation.distribution.Poisson(Parameters['Exp_claims'], Parameters["max_nbr_of_claims"])
     
         return Prob_of_claims
 
@@ -114,19 +93,19 @@ class setup:
         
         return irreducibility, profit, one_class
         
-    def specific_parameter(P, Data):
+    def specific_parameter(P):
         """ setup of the premiums when it is parameter and the transition rules when that is parameter..."""
         if P["model_type"] == "TR" or (P["model_type"] == "joint" and P["approx"]== "iter"):
             #set the premium parameter if the optimisation of the transition rules
             Transition_rules = None
             if P["premium_type"] == "prop":
-               Premiums = calculation.premium.proportional_scale(P["nbr_of_classes"], Data["Ratio_of_types"], Data["Exp_claims"])
+               Premiums = calculation.premium.proportional_scale(P["nbr_of_classes"], P["Ratio_of_types"], P["Exp_claims"])
             elif P["premium_type"] == "lin":
-               Premiums  = calculation.premium.linear_scale(P["nbr_of_classes"], Data["Exp_claims"])
+               Premiums  = calculation.premium.linear_scale(P["nbr_of_classes"], P["Exp_claims"])
             elif P["premium_type"] == "min":
-               Premiums  = calculation.premium.min_almost(P["nbr_of_classes"], Data["Exp_claims"])
+               Premiums  = calculation.premium.min_almost(P["nbr_of_classes"], P["Exp_claims"])
             elif P["premium_type"] == "max":
-               Premiums  = calculation.premium.max_almost(P["nbr_of_classes"], Data["Exp_claims"])
+               Premiums  = calculation.premium.max_almost(P["nbr_of_classes"], P["Exp_claims"])
             else:
                 Premiums = 0
                 Transition_rules = [0 for m in range(P["max_nbr_of_claims"]+1)]
