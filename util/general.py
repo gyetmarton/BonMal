@@ -35,16 +35,20 @@ def run(Parameters):
     elif Parameters["model_type"]  == "PR": 
         #Premium optimisation with fixed transition rules
         Optimisation = solve_model.Optimise_premiums(Parameters)
-         
         Optimisation.exec(Parameters)
         Results["Premiums"] = Optimisation.Premiums
         Results["Transition_rules"] = Parameters["Transition_rules"]
      
     elif Parameters["model_type"]  == "TR":
+        print(Parameters["approx"])
         if Parameters["approx"] is None:
+            
             #Transition rule optimisation with fixed premiums
             Optimisation = solve_model.Optimise_TR(Parameters)
            
+            
+           
+            
             Optimisation.exec(Parameters)
             Results["Premiums"] = Parameters["Premiums"]
             Results["Transition_rules"] = calculation.solution.optimal_TR(Optimisation.model, Parameters["rule_type"])

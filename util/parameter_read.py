@@ -28,6 +28,13 @@ def exec(parameter_file = 'parameter.toml', setup_folder = "."):
 
     # """ Transition rule type """    
     # #S-Unified -- M --Not unified
+    if Parameters["rule_type"] == "NU":
+        Parameters["rule_type"] = "M"
+    else:
+        Parameters["rule_type"] = "S"
+         
+    
+    
     # Parameters["rule_type"]  = P["rule_type"]
 
 
@@ -39,10 +46,8 @@ def exec(parameter_file = 'parameter.toml', setup_folder = "."):
     # Parameters["periods"] = P["periods"]
     
     # """ Approximation """
-    # if P["approx"] != 0:
-    #     Parameters["approx"] = P["approx"]
-    # else:
-    #     Parameters["approx"] = None
+    if Parameters["approx"] == 0:
+        Parameters["approx"] = None
         
     # Parameters["class_min"] = P["class_min"]    
     # Parameters["class_max"] = P["class_max"]
@@ -98,17 +103,18 @@ class setup:
         if P["model_type"] == "TR" or (P["model_type"] == "joint" and P["approx"]== "iter"):
             #set the premium parameter if the optimisation of the transition rules
             Transition_rules = None
-            if P["premium_type"] == "prop":
-               Premiums = calculation.premium.proportional_scale(P["nbr_of_classes"], P["Ratio_of_types"], P["Exp_claims"])
-            elif P["premium_type"] == "lin":
+            if P["premium_type"] == "lin":
                Premiums  = calculation.premium.linear_scale(P["nbr_of_classes"], P["Exp_claims"])
             elif P["premium_type"] == "min":
                Premiums  = calculation.premium.min_almost(P["nbr_of_classes"], P["Exp_claims"])
             elif P["premium_type"] == "max":
                Premiums  = calculation.premium.max_almost(P["nbr_of_classes"], P["Exp_claims"])
             else:
-                Premiums = 0
-                Transition_rules = [0 for m in range(P["max_nbr_of_claims"]+1)]
+               # P["premium_type"] == "prop":
+               Premiums = calculation.premium.proportional_scale(P["nbr_of_classes"], P["Ratio_of_types"], P["Exp_claims"])
+            
+            # Premiums = 0
+            # Transition_rules = [0 for m in range(P["max_nbr_of_claims"]+1)]
             
         elif P["model_type"] == "PR" or  P["model_type"] == "stp":
             #set the transition rules for the optimisiation of premiums and the stationary probabilities calculations

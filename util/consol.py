@@ -8,8 +8,6 @@ import util.calculation as calculation
 
 def environment_print(model, ruletype, time = None, Obj = None, TR = None, premiums = None):
     print(">> >> >> XXX SOLUTION XXX << << <<")
-    if time is not None:
-        print_time(model)
     if Obj is not None:
         print_objective(model)
     

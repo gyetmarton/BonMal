@@ -42,16 +42,19 @@ class Optimise_joint():
         
         
     def build_unified_rules(self, Parameters):
-        import backend_PulP_st_TR
-        self.backend = backend_PulP_st_TR
-        self.base_backend = backend_PulP_st_TR
+        import backend.stationer_U
+        
+        self.backend = backend.stationer_U
+        self.base_backend = backend.stationer_U
+        
+        
         self.J = [k for k in range(-Parameters["nbr_of_classes"]+1, Parameters["nbr_of_classes"])]   
     
     def build_nonunified_rules(self, Parameters):
-        import backend_PulP_st_mTR
-        self.backend = backend_PulP_st_mTR
-        import backend_PulP_st_TR
-        self.base_backend = backend_PulP_st_TR
+        import backend.stationer_NU
+        self.backend = backend.stationer_NU
+        import backend.stationer_U
+        self.base_backend = backend.stationer_U
         
         self.J = np.empty([Parameters["nbr_of_classes"], Parameters["nbr_of_classes"]], int)
         for k in range(Parameters["nbr_of_classes"]):
@@ -131,9 +134,6 @@ class Optimise_joint():
             self.Stat_probabilities = calculation.solution.convert_c_statvar(self.model,self.Types, Parameters["nbr_of_classes"], Parameters["periods"])
             self.OP = calculation.solution.OP_group(self.Stat_probabilities, self.Premiums, self.Types, Parameters["Exp_claims"], Parameters["Ratio_of_types"], Parameters)
             self.TOP = calculation.solution.total_OP(self.Stat_probabilities, self.Premiums, self.Types, Parameters["Exp_claims"], Parameters["Ratio_of_types"], Parameters)
- 
-            print(self.OP)
-
 
             consol.environment_print(self.model, Parameters["rule_type"], "time", "Obj", TR="TR", premiums = self.Premiums)  
             
@@ -148,8 +148,8 @@ class Stationary_probabilities():
         self.J = [k for k in range(-Parameters["nbr_of_classes"]+1, Parameters["nbr_of_classes"])]  
         self.Types = [each for each in Parameters["Exp_claims"]]
         
-        import backend.stationer_simple
-        self.backend = backend.stationer_simple
+        import backend.stationer_U
+        self.backend = backend.stationer_U
         
     
     def exec(self, Parameters):
@@ -177,8 +177,8 @@ class Optimise_premiums():
         self.Types = [each for each in Parameters["Exp_claims"]]
         
         
-        import backend_PulP_st_TR
-        self.backend = backend_PulP_st_TR
+        import backend.stationer_U
+        self.backend = backend.stationer_U
         
     
     def build_StatProbabilities(self, Parameters):
@@ -202,6 +202,9 @@ class Optimise_premiums():
         if self.model.status == 1:# or self.model.status == 0:
             self.Premiums = calculation.solution.optimal_premium_variables(self.model, Parameters["nbr_of_classes"])
             consol.environment_print(self.model, "S","time", "Obj", premiums = self.Premiums)
+            
+            self.OP = calculation.solution.OP_group(self.Stat_probabilities, self.Premiums, self.Types, Parameters["Exp_claims"], Parameters["Ratio_of_types"], Parameters)
+            self.TOP = calculation.solution.total_OP(self.Stat_probabilities, self.Premiums, self.Types, Parameters["Exp_claims"], Parameters["Ratio_of_types"], Parameters)
 
         else:
             consol.print_status(self.model.status)
@@ -240,8 +243,14 @@ class Optimise_TR():
        
         
 
-        if self.model.status == 1:# or self.model.status == 0:
+        if self.model.status == 1:
             self.Stat_probabilities = calculation.solution.convert_c_statvar(self.model,self.Types, Parameters["nbr_of_classes"])
+
+            self.OP = calculation.solution.OP_group(self.Stat_probabilities, Parameters["Premiums"], self.Types, Parameters["Exp_claims"], Parameters["Ratio_of_types"], Parameters)
+            self.TOP = calculation.solution.total_OP(self.Stat_probabilities, Parameters["Premiums"], self.Types, Parameters["Exp_claims"], Parameters["Ratio_of_types"], Parameters)
+
+
+
 
             consol.environment_print(self.model, Parameters["rule_type"], "time", "Obj", TR="TR", premiums = Parameters["Premiums"])    
             
