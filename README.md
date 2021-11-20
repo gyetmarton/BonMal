@@ -5,16 +5,16 @@ To optimize a BMS, set up the parameter.tofl file, then run the Main.py. The pro
 
 
 ## List of files
-# Main folder
+#### Main folder
 parameter.tofl - to set the parameters
 Main.py - main file, read the parameters, and solve the model
 
-# backend 
+#### backend 
 stationer_U -  MILP model for the stationary models, with unified transition rules
 stationer_NU - MILP model for the stationary models, with nonunified transition rules
 multiperiod_U -  MILP model for the multiperiod models, with unified transition rules
 
-# util
+#### util
 calculation.py - consists functions for calculations
 consol.py - functions to write the solution to the consol
 general.py - selecting the model
@@ -25,9 +25,16 @@ solve_model - setups of the models and calls the required backend to solve it
 ## Usage
 Set the parameters then run the Main.py
 
-### description of parameters.json
--"setup": Name of the setup JSON-file, do not use the abbreviation.
--"nbr_of_classes": Number of classes, should be greater than 1
+### Risk-groups parameters 
+- **Exp_claims**: Dictionary of the expected claims of the risk-groups. (Eg., Exp_claims = { A = 0.01,  B = 0.02} - menas that we have two risk-groups, A and B with expected claim               of 0.01 and 0.02 respectively).
+- **Ratio_of_types** :  Dictionary of the ratios of the risk-groups. It can mean the number of policyholders in the risk-groups as well (Eg., Exp_claims = Ratio_of_types =  { A = 50,  B = 50}).
+- **max_nbr_of_claims**:  Maximal number of claims, should be greater than 0
+
+### BMS parameters
+- **nbr_of_classes**: Number of classes, should be greater than 1
+- **rule_type**:  Type of the Transition rules (can be "U" (_uniformed_), or "NU" (_non-uniformed_))
+
+
 -"max_nbr_of_claims": Maximal number of claims, should be greater than 0
 -"type_of_distribution": type of claim-distribution
 - "d" - 0-1 claim-distribution
@@ -45,9 +52,7 @@ can be added to model_type "joint", "TR" and "PR"
 -"oc" - Each risk-group's fair premiums should be presented in the premium-scale
 can be added to model_type "joint"
 
-"rule_type": Can be set how the transition rules are considered
--"S" -uniformed, every class has the same transition rules
--"M" -nonuniformed, the classes can have different transition rules
+
 The "M" works only in the model_type "joint" or "TR", only in the stationary models
 "premium_type": For the model_type "TR" sets the premium-scale
 - "lin"  - linear
@@ -63,8 +68,6 @@ for the remaining claims."file_name": "optimal_solution.xlsx",
 "periods": Periods of time considered in the Multi-period optimisation. If it is 0, then the stationary model is considered.
 The multi-period optimisation is only mplemented for the model_type "joint" with rule_type "S".
 -"name": Name of the setup
--"Exp_claims": Dictionary of the expected claims of the risk-groups.
-(Eg: { "A": 0.01,  "B": 0.05} - menas that we have two risk-groups, A and B with expected claim of 0.01 and 0.05 respectively).
--"Ratio_of_types":  Dictionary of the ratios of the risk-groups. It can mean the number of policyholders in the risk-groups as well.
+-"Exp_claims": 
 
 
