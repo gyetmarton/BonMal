@@ -1,22 +1,26 @@
 # Bonus Malus optimizer
 
-This is a program to optimize a Bonus-malus system (BMS). The description of the models is presented in my dissertation, Gyetvai, M.: Optimization of Bonus-Malus Systems
+This is a program to optimize a Bonus-malus system (BMS). The description of the models is presented in my dissertation, Gyetvai, M.: Optimization of Bonus-Malus Systems.
 To optimize a BMS, set up the parameter.tofl file, then run the Main.py. The program will find the optimal solution and write it to the consol. 
 
 
 ## List of files
-
-parameter.json - to set the parameters of the BMS
-setup/setup.json - to set the parameters  of the policyholders
+# Main folder
+parameter.tofl - to set the parameters
 Main.py - main file, read the parameters, and solve the model
-parameter_read - read the parameters of parameter.json and setup/setup.json
-general.py - the selection of the model
-solve_model - setups of the models and calls the required backend to solve it
+
+# backend 
+stationer_U -  MILP model for the stationary models, with unified transition rules
+stationer_NU - MILP model for the stationary models, with nonunified transition rules
+multiperiod_U -  MILP model for the multiperiod models, with unified transition rules
+
+# util
 calculation.py - consists functions for calculations
 consol.py - functions to write the solution to the consol
-backend_PulP_st_TR - backend- MILP model for the stationary models, with unified transition rules
-backend_PulP_st_mTR - backend- MILP model for the stationary models, with nonunified transition rules
-backend_PulP_mp_TR - backend- MILP model for the multiperiod models, with unified transition rules
+general.py - selecting the model
+parameter_read - read the parameters of parameter.tofl
+solve_model - setups of the models and calls the required backend to solve it
+
 
 ## Usage
 Set the parameters then run the Main.py
