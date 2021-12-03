@@ -3,6 +3,9 @@
 This is a program to optimize a Bonus-malus system (BMS). The description of the models is presented in my dissertation, Gyetvai, M.: Optimization of Bonus-Malus Systems.
 To optimize a BMS, set up the parameter.tofl file, then run the Main.py. The program will find the optimal solution and write it to the consol. 
 
+Still in developement, some fncions may not work.
+
+
 
 ## List of files
 #### Main folder
