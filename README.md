@@ -33,35 +33,24 @@ Set the parameters then run the Main.py
 ### BMS parameters
 - **nbr_of_classes**: Number of classes, should be greater than 1
 - **rule_type**:  Type of the Transition rules (can be "U" (_uniformed_), or "NU" (_non-uniformed_))
+- **model_type**: type of the model:
+    -"joint" - joint optimisation of premiums and transition rules
+    -"PR"    - optimisation of the premiums
+    -"TR"    - optimisation of the transition rules
+   -"stp"   - calculate the stationary probabilities of a transition rules
+-**add_constraints**: Additional constraints to consider. The strings should be listed in [] separated with , (eg.: ["ir", "pr"])
+    -"ir" - Adds an irreducibility constraint - all of the stationary probabilities should be greater than 10^9 (_can be added to model_type "joint" and "TR"_)
+    -"pr" - Adds the profitability constraint (_can be added to model_type "joint", "TR" and "PR"_)
+    -"oc" - Each risk-group's fair premiums should be presented in the premium-scale(_can be added to model_type "joint"_)
 
-
--"max_nbr_of_claims": Maximal number of claims, should be greater than 0
--"type_of_distribution": type of claim-distribution
-- "d" - 0-1 claim-distribution
-- "pois" - Poisson claim-distribution (if  "max_nbr_of_claims">1 then this distribution is used)
-"model_type": type of the model:
--"joint" - joint optimisation of premiums and transition rules
--"PR"    - optimisation of the premiums
--"TR"    - optimisation of the transition rules
--"stp"   - calculate the stationary probabilities of a transition rules
--"add_constraints": Additional constraints to consider. The strings should be listed in [] separated with , (eg.: ["ir", "pr"])
--"ir" - Adds an irreducibility constraint - all of the stationary probabilities should be greater than 10^9
-can be added to model_type "joint" and "TR"
--"pr" - Adds the profitability constraint
-can be added to model_type "joint", "TR" and "PR"
--"oc" - Each risk-group's fair premiums should be presented in the premium-scale
-can be added to model_type "joint"
-
-
-The "M" works only in the model_type "joint" or "TR", only in the stationary models
-"premium_type": For the model_type "TR" sets the premium-scale
-- "lin"  - linear
-- "prop" - proportional to the ratios of the risk-groups
-"Transition_rules":   For the model_type "PR" and "stp" set the Transition rule. It has to be a list, first element
+-**premium_type**: For the model_type "TR" sets the premium-scale
+  - "lin"  - linear
+  - "prop" - proportional to the ratios of the risk-groups
+-**Transition_rules**:   For the model_type "PR" and "stp" set the Transition rule. It has to be a list, first element
 is the 0-claim, then 1-claim, up to the "max_nbr_of_claims". (Eg. [1,-2, -4])
 If there is less rules given (at least 2 element needed), then the twice of the last one considered
 for the remaining claims."file_name": "optimal_solution.xlsx",
-"solver": Set the solver for the model. Currently implemented:
+-**solver**: Set the solver for the model. Currently implemented:
 - "Gurobi" (https://www.gurobi.com/)
 - "GLPK" (https://www.gnu.org/software/glpk/)
 - If anything else is used then the default is coin-Cbc (https://github.com/coin-or/Cbc)
