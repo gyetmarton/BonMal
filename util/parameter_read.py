@@ -110,11 +110,7 @@ class setup:
             elif P["premium_type"] == "max":
                Premiums  = calculation.premium.max_almost(P["nbr_of_classes"], P["Exp_claims"])
             else:
-               # P["premium_type"] == "prop":
-               Premiums = calculation.premium.proportional_scale(P["nbr_of_classes"], P["Ratio_of_types"], P["Exp_claims"])
-            
-            # Premiums = 0
-            # Transition_rules = [0 for m in range(P["max_nbr_of_claims"]+1)]
+                Premiums = calculation.premium.proportional_scale(P["nbr_of_classes"], P["Ratio_of_types"], P["Exp_claims"])
             
         elif P["model_type"] == "PR" or  P["model_type"] == "stp":
             #set the transition rules for the optimisiation of premiums and the stationary probabilities calculations

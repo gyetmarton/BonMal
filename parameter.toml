@@ -13,13 +13,12 @@ model_type = "joint"      #>>> Can be: "stp", "TR", "PR", "joint"
 add_constraints = []    #>>> Can be : ["ir", "pr", "oc"]
 premium_type = "max" #If model_type TR, then it can be: "prop" (def), "lin", "min", "max"
 Transition_rules =  [1, -2]
-periods =  5
+periods =  0
 
 
 ## Solver parameters ##
-file_name =  "optimal_solution.xlsx"
-solver = "Gurobi"
-
+#file_name =  "optimal_solution.xlsx"
+solver = "GLPK"#"Gurobi"
 approx = 0   
 #If 0, then exact model, other options: 
 

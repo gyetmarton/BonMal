@@ -39,11 +39,9 @@ class Optimise_joint():
         elif Parameters["rule_type"] == "S" and Parameters["periods"] > 0:
             self.build_multiperiod_model(Parameters)
         else:
-            print("ERROR, not yet implemented")
+            print("** ERROR, not yet implemented **")
             
-        
-        
-        
+                
     def build_unified_rules(self, Parameters):
         import backend.stationer_U
         
@@ -176,8 +174,7 @@ class Optimise_premiums():
         """ constructor """
         self.J = [k for k in range(-Parameters["nbr_of_classes"]+1, Parameters["nbr_of_classes"])]  
         self.Types = [each for each in Parameters["Exp_claims"]]
-        
-        
+                
         import backend.stationer_U
         self.backend = backend.stationer_U
         
