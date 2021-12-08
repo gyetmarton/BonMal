@@ -36,8 +36,11 @@ class Optimise_joint():
 
         elif Parameters["rule_type"] == "M" and Parameters["periods"] == 0:
             self.build_nonunified_rules(Parameters)
-        else:
+        elif Parameters["rule_type"] == "S" and Parameters["periods"] > 0:
             self.build_multiperiod_model(Parameters)
+        else:
+            print("ERROR, not yet implemented")
+            
         
         
         
@@ -62,15 +65,13 @@ class Optimise_joint():
                 self.J[k][s] = -k+s
                 
     def build_multiperiod_model(self, Parameters):
-        import backend_PulP_mp_TR
-        self.backend = backend_PulP_mp_TR
+        import backend.multiperiod_U
+        self.backend = backend.multiperiod_U
         self.J = [k for k in range(-Parameters["nbr_of_classes"]+1, Parameters["nbr_of_classes"])]
-        import backend_PulP_st_TR
-        self.base_backend = backend_PulP_st_TR
+        import backend.stationer_U
+        self.base_backend = backend.stationer_U
         
         
-        
-    
     
     def build_Epsilon(self, Parameters):    
         
