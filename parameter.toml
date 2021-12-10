@@ -5,11 +5,11 @@ max_nbr_of_claims = 2
 
 ## BMS parameters ##
 nbr_of_classes =  5
-rule_type = "NU" #>>> Can be : "U" or "NU"
+rule_type = "U" #>>> Can be : "U" or "NU"
 
 
 ## Model parameters ##
-model_type = "joint"      #>>> Can be: "stp", "TR", "PR", "joint"
+model_type = "TR"      #>>> Can be: "stp", "TR", "PR", "joint"
 add_constraints = []    #>>> Can be : ["ir", "pr", "oc"]
 premium_type = "max" #If model_type TR, then it can be: "prop" (def), "lin", "min", "max"
 Transition_rules =  [1, -2]
@@ -17,9 +17,8 @@ periods =  0
 
 
 ## Solver parameters ##
-#file_name =  "optimal_solution.xlsx"
-solver = "GLPK"#"Gurobi"
-approx = 0   
+solver = "Gurobi" #"GLPK"#
+approx = "class_extreme"   
 #If 0, then exact model, other options: 
 
 consol = 1

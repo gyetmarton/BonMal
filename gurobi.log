@@ -1042,3 +1042,549 @@ Solution count 4: 24.283 24.2865 24.2865 25
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 2.428297427333e+01, best bound 2.428282501603e+01, gap 0.0006%
+
+Gurobi 8.1.1 (win64, Python) logging started 12/10/21 18:09:23
+
+Academic license - for non-commercial use only
+No parameters matching 'warmStart' found
+Optimize a model with 325 rows, 317 columns and 1273 nonzeros
+Variable types: 290 continuous, 27 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 134 rows and 120 columns
+Presolve time: 0.06s
+Presolved: 191 rows, 197 columns, 743 nonzeros
+Variable types: 180 continuous, 17 integer (17 binary)
+
+Root relaxation: objective 1.241451e-03, 50 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00124    0    6          -    0.00124      -     -    0s
+H    0     0                      24.5147679    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00125    0    7   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+H    0     0                      24.4931579    0.00125   100%     -    0s
+     0     2    0.00125    0    8   24.49316    0.00125   100%     -    0s
+H    4     4                      24.2592392    0.00125   100%  18.5    0s
+*    6     4               2      24.0581727    0.00125   100%  20.0    0s
+
+Cutting planes:
+  MIR: 10
+
+Explored 84 nodes (802 simplex iterations) in 0.14 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 24.0582 24.2592 24.4932 24.5148 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.405817268086e+01, best bound 2.405817268086e+01, gap 0.0000%
+Parameter Cutoff unchanged
+   Value: 1e+100  Min: -1e+100  Max: 1e+100  Default: 1e+100
+No parameters matching 'warmStart' found
+Optimize a model with 325 rows, 317 columns and 1273 nonzeros
+Variable types: 290 continuous, 27 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 134 rows and 120 columns
+Presolve time: 0.02s
+Presolved: 191 rows, 197 columns, 743 nonzeros
+Variable types: 180 continuous, 17 integer (17 binary)
+
+Root relaxation: objective 1.241451e-03, 50 iterations, 0.01 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00124    0    6          -    0.00124      -     -    0s
+H    0     0                      24.5147679    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00125    0    7   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+H    0     0                      24.4931579    0.00125   100%     -    0s
+     0     2    0.00125    0    8   24.49316    0.00125   100%     -    0s
+H    4     4                      24.2592392    0.00125   100%  18.5    0s
+*    6     4               2      24.0581727    0.00125   100%  20.0    0s
+
+Cutting planes:
+  MIR: 10
+
+Explored 84 nodes (802 simplex iterations) in 0.13 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 24.0582 24.2592 24.4932 24.5148 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.405817268086e+01, best bound 2.405817268086e+01, gap 0.0000%
+Parameter Cutoff unchanged
+   Value: 1e+100  Min: -1e+100  Max: 1e+100  Default: 1e+100
+No parameters matching 'warmStart' found
+Optimize a model with 325 rows, 317 columns and 1273 nonzeros
+Variable types: 290 continuous, 27 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 134 rows and 120 columns
+Presolve time: 0.00s
+Presolved: 191 rows, 197 columns, 743 nonzeros
+Variable types: 180 continuous, 17 integer (17 binary)
+
+Root relaxation: objective 1.241451e-03, 50 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00124    0    6          -    0.00124      -     -    0s
+H    0     0                      24.5147679    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00125    0    7   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+H    0     0                      24.4931579    0.00125   100%     -    0s
+     0     2    0.00125    0    8   24.49316    0.00125   100%     -    0s
+H    4     4                      24.2592392    0.00125   100%  18.5    0s
+*    6     4               2      24.0581727    0.00125   100%  20.0    0s
+
+Cutting planes:
+  MIR: 10
+
+Explored 84 nodes (802 simplex iterations) in 0.06 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 24.0582 24.2592 24.4932 24.5148 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.405817268086e+01, best bound 2.405817268086e+01, gap 0.0000%
+No parameters matching 'warmStart' found
+Optimize a model with 194 rows, 173 columns and 611 nonzeros
+Variable types: 122 continuous, 51 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 158 rows and 139 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds
+Thread count was 1 (of 12 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+Parameter Cutoff unchanged
+   Value: 1e+100  Min: -1e+100  Max: 1e+100  Default: 1e+100
+No parameters matching 'warmStart' found
+Optimize a model with 325 rows, 317 columns and 1273 nonzeros
+Variable types: 290 continuous, 27 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 134 rows and 120 columns
+Presolve time: 0.00s
+Presolved: 191 rows, 197 columns, 743 nonzeros
+Variable types: 180 continuous, 17 integer (17 binary)
+
+Root relaxation: objective 1.241451e-03, 50 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00124    0    6          -    0.00124      -     -    0s
+H    0     0                      24.5147679    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00125    0    7   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+H    0     0                      24.4931579    0.00125   100%     -    0s
+     0     2    0.00125    0    8   24.49316    0.00125   100%     -    0s
+H    4     4                      24.2592392    0.00125   100%  18.5    0s
+*    6     4               2      24.0581727    0.00125   100%  20.0    0s
+
+Cutting planes:
+  MIR: 10
+
+Explored 84 nodes (802 simplex iterations) in 0.05 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 24.0582 24.2592 24.4932 24.5148 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.405817268086e+01, best bound 2.405817268086e+01, gap 0.0000%
+No parameters matching 'warmStart' found
+Optimize a model with 194 rows, 173 columns and 611 nonzeros
+Variable types: 122 continuous, 51 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 158 rows and 139 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds
+Thread count was 1 (of 12 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+Parameter Cutoff unchanged
+   Value: 1e+100  Min: -1e+100  Max: 1e+100  Default: 1e+100
+No parameters matching 'warmStart' found
+Optimize a model with 325 rows, 317 columns and 1273 nonzeros
+Variable types: 290 continuous, 27 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 134 rows and 120 columns
+Presolve time: 0.00s
+Presolved: 191 rows, 197 columns, 743 nonzeros
+Variable types: 180 continuous, 17 integer (17 binary)
+
+Root relaxation: objective 1.241451e-03, 50 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00124    0    6          -    0.00124      -     -    0s
+H    0     0                      24.5147679    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00125    0    7   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+H    0     0                      24.4931579    0.00125   100%     -    0s
+     0     2    0.00125    0    8   24.49316    0.00125   100%     -    0s
+H    4     4                      24.2592392    0.00125   100%  18.5    0s
+*    6     4               2      24.0581727    0.00125   100%  20.0    0s
+
+Cutting planes:
+  MIR: 10
+
+Explored 84 nodes (802 simplex iterations) in 0.06 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 24.0582 24.2592 24.4932 24.5148 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.405817268086e+01, best bound 2.405817268086e+01, gap 0.0000%
+No parameters matching 'warmStart' found
+Optimize a model with 194 rows, 173 columns and 611 nonzeros
+Variable types: 122 continuous, 51 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 158 rows and 139 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds
+Thread count was 1 (of 12 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+Parameter Cutoff unchanged
+   Value: 1e+100  Min: -1e+100  Max: 1e+100  Default: 1e+100
+No parameters matching 'warmStart' found
+Optimize a model with 325 rows, 317 columns and 1273 nonzeros
+Variable types: 290 continuous, 27 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 134 rows and 120 columns
+Presolve time: 0.00s
+Presolved: 191 rows, 197 columns, 743 nonzeros
+Variable types: 180 continuous, 17 integer (17 binary)
+
+Root relaxation: objective 1.241451e-03, 50 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00124    0    6          -    0.00124      -     -    0s
+H    0     0                      24.5147679    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00125    0    7   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+H    0     0                      24.4931579    0.00125   100%     -    0s
+     0     2    0.00125    0    8   24.49316    0.00125   100%     -    0s
+H    4     4                      24.2592392    0.00125   100%  18.5    0s
+*    6     4               2      24.0581727    0.00125   100%  20.0    0s
+
+Cutting planes:
+  MIR: 10
+
+Explored 84 nodes (802 simplex iterations) in 0.06 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 24.0582 24.2592 24.4932 24.5148 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.405817268086e+01, best bound 2.405817268086e+01, gap 0.0000%
+No parameters matching 'warmStart' found
+Optimize a model with 194 rows, 173 columns and 611 nonzeros
+Variable types: 122 continuous, 51 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 158 rows and 139 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds
+Thread count was 1 (of 12 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+Parameter Cutoff unchanged
+   Value: 1e+100  Min: -1e+100  Max: 1e+100  Default: 1e+100
+No parameters matching 'warmStart' found
+Optimize a model with 325 rows, 317 columns and 1273 nonzeros
+Variable types: 290 continuous, 27 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 134 rows and 120 columns
+Presolve time: 0.00s
+Presolved: 191 rows, 197 columns, 743 nonzeros
+Variable types: 180 continuous, 17 integer (17 binary)
+
+Root relaxation: objective 1.241451e-03, 50 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00124    0    6          -    0.00124      -     -    0s
+H    0     0                      24.5147679    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00125    0    7   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+H    0     0                      24.4931579    0.00125   100%     -    0s
+     0     2    0.00125    0    8   24.49316    0.00125   100%     -    0s
+H    4     4                      24.2592392    0.00125   100%  18.5    0s
+*    6     4               2      24.0581727    0.00125   100%  20.0    0s
+
+Cutting planes:
+  MIR: 10
+
+Explored 84 nodes (802 simplex iterations) in 0.06 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 24.0582 24.2592 24.4932 24.5148 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.405817268086e+01, best bound 2.405817268086e+01, gap 0.0000%
+No parameters matching 'warmStart' found
+Optimize a model with 194 rows, 173 columns and 611 nonzeros
+Variable types: 122 continuous, 51 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 158 rows and 139 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 12 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+Parameter Cutoff unchanged
+   Value: 1e+100  Min: -1e+100  Max: 1e+100  Default: 1e+100
+No parameters matching 'warmStart' found
+Optimize a model with 325 rows, 317 columns and 1273 nonzeros
+Variable types: 290 continuous, 27 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 134 rows and 120 columns
+Presolve time: 0.00s
+Presolved: 191 rows, 197 columns, 743 nonzeros
+Variable types: 180 continuous, 17 integer (17 binary)
+
+Root relaxation: objective 1.241451e-03, 50 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00124    0    6          -    0.00124      -     -    0s
+H    0     0                      24.5147679    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00125    0    7   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+H    0     0                      24.4931579    0.00125   100%     -    0s
+     0     2    0.00125    0    8   24.49316    0.00125   100%     -    0s
+H    4     4                      24.2592392    0.00125   100%  18.5    0s
+*    6     4               2      24.0581727    0.00125   100%  20.0    0s
+
+Cutting planes:
+  MIR: 10
+
+Explored 84 nodes (802 simplex iterations) in 0.06 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 24.0582 24.2592 24.4932 24.5148 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.405817268086e+01, best bound 2.405817268086e+01, gap 0.0000%
+No parameters matching 'warmStart' found
+Optimize a model with 194 rows, 173 columns and 611 nonzeros
+Variable types: 122 continuous, 51 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 158 rows and 139 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.01 seconds
+Thread count was 1 (of 12 available processors)
+
+Solution count 0
+
+Model is infeasible
+Best objective -, best bound -, gap -
+No parameters matching 'warmStart' found
+Optimize a model with 325 rows, 317 columns and 1273 nonzeros
+Variable types: 290 continuous, 27 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 134 rows and 120 columns
+Presolve time: 0.00s
+Presolved: 191 rows, 197 columns, 743 nonzeros
+Variable types: 180 continuous, 17 integer (17 binary)
+
+Root relaxation: objective 1.241451e-03, 50 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00124    0    6          -    0.00124      -     -    0s
+H    0     0                      24.5147679    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00125    0    7   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+H    0     0                      24.4931579    0.00125   100%     -    0s
+     0     2    0.00125    0    8   24.49316    0.00125   100%     -    0s
+H    4     4                      24.2592392    0.00125   100%  18.5    0s
+*    6     4               2      24.0581727    0.00125   100%  20.0    0s
+
+Cutting planes:
+  MIR: 10
+
+Explored 84 nodes (802 simplex iterations) in 0.06 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 24.0582 24.2592 24.4932 24.5148 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.405817268086e+01, best bound 2.405817268086e+01, gap 0.0000%
+No parameters matching 'warmStart' found
+Optimize a model with 325 rows, 317 columns and 1273 nonzeros
+Variable types: 290 continuous, 27 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [5e-05, 5e+01]
+  Objective range  [5e+01, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Presolve removed 134 rows and 120 columns
+Presolve time: 0.00s
+Presolved: 191 rows, 197 columns, 743 nonzeros
+Variable types: 180 continuous, 17 integer (17 binary)
+
+Root relaxation: objective 1.241451e-03, 50 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00124    0    6          -    0.00124      -     -    0s
+H    0     0                      24.5147679    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    6   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00124    0    7   24.51477    0.00124   100%     -    0s
+     0     0    0.00125    0    7   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+     0     0    0.00125    0    8   24.51477    0.00125   100%     -    0s
+H    0     0                      24.4931579    0.00125   100%     -    0s
+     0     2    0.00125    0    8   24.49316    0.00125   100%     -    0s
+H    4     4                      24.2592392    0.00125   100%  18.5    0s
+*    6     4               2      24.0581727    0.00125   100%  20.0    0s
+
+Cutting planes:
+  MIR: 10
+
+Explored 84 nodes (802 simplex iterations) in 0.05 seconds
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 24.0582 24.2592 24.4932 24.5148 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.405817268086e+01, best bound 2.405817268086e+01, gap 0.0000%

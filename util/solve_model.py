@@ -7,9 +7,6 @@ Modul for soving the stationer model with the simple transition rules
 
 """
 
-#import B_end_gurobi as solver
-#import backend_PulP_st_TR
-#import backend_PulP_st_mTR
 import util.consol as consol
 import util.calculation as calculation
 import numpy as np

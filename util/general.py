@@ -6,6 +6,7 @@ This is the main of the interface. It is also callable function.
 
 #import Output
 import util.solve_model as solve_model
+import util.solve_approx as solve_approx
 import util.calculation as calculation
 # import solve_approx
 
@@ -40,24 +41,20 @@ def run(Parameters):
         Results["Transition_rules"] = Parameters["Transition_rules"]
      
     elif Parameters["model_type"]  == "TR":
-        print(Parameters["approx"])
-        if Parameters["approx"] is None:
-            
+        
+        if Parameters["approx"] == "one_imp":
+            Optimisation = solve_approx.Algo_one_imp(Parameters)
+            Results["objective"], Results["Transition_rules"], Results["Premiums"], Results["running_time"] = Optimisation.exec(Parameters)
+        elif Parameters["approx"] == "class_extreme":
+            Optimisation = solve_approx.Algo_class_extreme(Parameters)
+            Results["objective"], Results["Transition_rules"], Results["Premiums"], Results["running_time"] = Optimisation.exec(Parameters)
+        
+        else:
             #Transition rule optimisation with fixed premiums
             Optimisation = solve_model.Optimise_TR(Parameters)
-           
-            
-           
-            
             Optimisation.exec(Parameters)
             Results["Premiums"] = Parameters["Premiums"]
             Results["Transition_rules"] = calculation.solution.optimal_TR(Optimisation.model, Parameters["rule_type"])
-        # elif Parameters["approx"] == "one_imp":
-        #     Optimisation = solve_approx.Algo_one_imp(Parameters)
-        #     Results["objective"], Results["Transition_rules"], Results["Premiums"], Results["running_time"] = Optimisation.exec(Parameters)
-        # elif Parameters["approx"] == "class_extreme":
-        #     Optimisation = solve_approx.Algo_class_extreme(Parameters)
-        #     Results["objective"], Results["Transition_rules"], Results["Premiums"], Results["running_time"] = Optimisation.exec(Parameters)
             
     
     elif Parameters["model_type"]  == "stp":
