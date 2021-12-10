@@ -54,8 +54,10 @@ Set the parameters then run the Main.py
 - **periods**: Periods of time considered in the Multi-period optimisation. If it is 0, then the stationary model is considered. (_only implemented to the "joint" model with "U" type transition rules)_
 
 ### Solver parameters
--**solver**: Set the solver for the model. Currently implemented:
+- **solver**: Set the solver for the model. Currently implemented:
 - "Gurobi" (https://www.gurobi.com/)
 - "GLPK" (https://www.gnu.org/software/glpk/)
 - If anything else is used then the default is coin-Cbc (https://github.com/coin-or/Cbc)
-
+- **approx**: Choose the approximation method
+    - "one_imp": approximation of the TR model with NU transition rules, gives the one-improved solution.
+    - "class_extreme": approximation of the TR model with NU transition rules, an iterative heurisic, in each iteration it optimize only one class' transition rules. 
