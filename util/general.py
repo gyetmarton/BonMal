@@ -16,10 +16,17 @@ def run(Parameters):
     
     Results = {}
     OP_calculation = True         
+    error = False
     
     if Parameters["model_type"] == "joint":    
         #Joint optimisation
-        if Parameters["approx"] is None:
+        
+        if Parameters["approx"] == "iter":
+            Optimisation = solve_approx.Algo_iterative(Parameters)
+            Results["objective"], Results["Transition_rules"], Results["Premiums"], Results["running_time"], Results["iterations"] =  Optimisation.exec(Parameters)
+            Optimisation.OP = calculation.solution.OP_group(Optimisation.Stat_probabilities, Results["Premiums"], Optimisation.Types, Parameters["Exp_claims"], Parameters["Ratio_of_types"], Parameters)
+            Optimisation.TOP = calculation.solution.total_OP(Optimisation.Stat_probabilities, Results["Premiums"], Optimisation.Types, Parameters["Exp_claims"], Parameters["Ratio_of_types"], Parameters)
+        else:
             Optimisation = solve_model.Optimise_joint(Parameters)
             Optimisation.exec(Parameters)
             #Calculate results
@@ -27,12 +34,7 @@ def run(Parameters):
             Results["Transition_rules"] = Optimisation.Transition_rules 
             Results["Premiums"] =  Optimisation.Premiums
             
-        # elif Parameters["approx"] == "iter":
-        #     Optimisation = solve_approx.Algo_iterative(Parameters)
-        #     Results["objective"], Results["Transition_rules"], Results["Premiums"], Results["running_time"], Results["iterations"] =  Optimisation.exec(Parameters)
-        #     Optimisation.OP = calculation.solution.OP_group(Optimisation.Stat_probabilities, Results["Premiums"], Optimisation.Types, Parameters["Exp_claims"], Parameters["Ratio_of_types"], Parameters)
-        #     Optimisation.TOP = calculation.solution.total_OP(Optimisation.Stat_probabilities, Results["Premiums"], Optimisation.Types, Parameters["Exp_claims"], Parameters["Ratio_of_types"], Parameters)
-                
+
     elif Parameters["model_type"]  == "PR": 
         #Premium optimisation with fixed transition rules
         Optimisation = solve_model.Optimise_premiums(Parameters)
@@ -64,12 +66,11 @@ def run(Parameters):
         Results["Premiums"] = Optimisation.Premiums
         Results["Transition_rules"] = Parameters["Transition_rules"]
     else:
-        print("model name", Parameters["model_type"], "is unknown!!!")
-        
-     
+        print("*** ERROR: model name", Parameters["model_type"], "is unknown. *** ", "\n", "   Try: joint, PR, TR or stp")
+        error = True
      
     #Calculate results
-    if OP_calculation:
+    if OP_calculation and error is False:
         Results["OP"] = Optimisation.OP
         Results["TOP"] = Optimisation.TOP
     else:
