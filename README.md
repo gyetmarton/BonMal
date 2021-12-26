@@ -31,6 +31,7 @@ Set the parameters then run the Main.py
 ### Risk-groups parameters 
 - **Exp_claims**: Dictionary of the expected claims of the risk-groups. (Eg., Exp_claims = { A = 0.01,  B = 0.02} - menas that we have two risk-groups, A and B with expected claim               of 0.01 and 0.02 respectively).
 - **Ratio_of_types** :  Dictionary of the ratios of the risk-groups. It can mean the number of policyholders in the risk-groups as well (Eg., Exp_claims = Ratio_of_types =  { A = 50,  B = 50}).
+- **Obs_claims**: Dictionary, similarily to the Exp_claims. This is the observable risks of the risk-groups. Only affect the model if the observe = True  at the Model parameters
 - **max_nbr_of_claims**:  Maximal number of claims, should be greater than 0
 
 ### BMS parameters
@@ -52,6 +53,10 @@ Set the parameters then run the Main.py
   - "prop" (default) - proportional to the ratios of the risk-groups.
 - **Transition_rules**:   For the model_type "PR" and "stp" set the Transition rule. It has to be a list, first element is the 0-claim, then 1-claim, up to the          "max_nbr_of_claims" (Eg. [1,-2, -4]). If there is less rules given (at least 2 element needed), then the twice of the last one considered for the remaining claims.
 - **periods**: Periods of time considered in the Multi-period optimisation. If it is 0, then the stationary model is considered. (_only implemented to the "joint" model with "U" type transition rules)_
+- **observable**: If "True", then the observable risks are also considered.
+"
+
+
 
 ### Solver parameters
 - **solver**: Set the solver for the model. Currently implemented:
