@@ -63,3 +63,4 @@ Set the parameters then run the Main.py
     - "class_extreme": approximation of the TR model with NU transition rules, an iterative heurisic, in each iteration it optimize only one class' transition rules.
     - "iter": Iterative optimization of premiums and then transition rules of the _joint_ optimization model. (_only implemented to the "joint" model with "U" type transition rules)_
 -  **consol**: If the value is _0_, then the result is not written into the consol
+-  **round**: A value for rounding the output.
