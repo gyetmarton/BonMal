@@ -3,7 +3,7 @@
 This is a program to optimize a Bonus-malus system (BMS). The description of the models is presented in my dissertation, Gyetvai, M.: Optimization of Bonus-Malus Systems.
 To optimize a BMS, set up the parameter.tofl file, then run the Main.py. The program will find the optimal solution and write it to the consol. 
 
-Still in developement, some fncions may not work.
+Still in developement, some funcions may not work. 
 
 
 
@@ -62,3 +62,4 @@ Set the parameters then run the Main.py
     - "one_imp": approximation of the TR model with NU transition rules, gives the one-improved solution.
     - "class_extreme": approximation of the TR model with NU transition rules, an iterative heurisic, in each iteration it optimize only one class' transition rules.
     - "iter": Iterative optimization of premiums and then transition rules of the _joint_ optimization model. (_only implemented to the "joint" model with "U" type transition rules)_
+-  **consol**: If the value is _0_, then the result is not written into the consol
