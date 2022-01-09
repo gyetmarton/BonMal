@@ -1,6 +1,7 @@
 ## Risk-groups parameters ##
 Exp_claims =  { A = 0.01,  B = 0.02}
-Ratio_of_types =  { A = 50,  B = 50}      
+Ratio_of_types =  { A = 50,  B = 50}     
+Obs_claims =  {A = 0.01, B = 0.03}
 max_nbr_of_claims = 2
 
 ## BMS parameters ##
@@ -14,20 +15,13 @@ add_constraints = []    #>>> Can be : ["ir", "pr", "oc"]
 premium_type = "max" #If model_type TR, then it can be: "prop" (def), "lin", "min", "max"
 Transition_rules =  [1, -2]
 periods =  0
-
+observable ="True"
 
 ## Solver parameters ##
 solver = "Gurobi" #"GLPK"#
-approx = "iter"
+approx = 0
     # "one_imp"
     #"class_extreme"  
     #"iter" 
-
 consol = 1
-
-
-#OTHER????
-class_min = 3
-class_max = 100
-
 round = 4

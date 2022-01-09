@@ -20,7 +20,6 @@ def exec(parameter_file = 'parameter.toml', setup_folder = "."):
     # """Add constraints"""
     Parameters["irreducibility"], Parameters["profit"], Parameters["one_class"]  = setup.additional_constraints(Parameters)
     
-    
     # """ Model type """
     # #Define the type of the model
     Parameters["Premiums"], Parameters["Transition_rules"] = setup.specific_parameter(Parameters)
@@ -32,35 +31,20 @@ def exec(parameter_file = 'parameter.toml', setup_folder = "."):
         Parameters["rule_type"] = "M"
     else:
         Parameters["rule_type"] = "S"
-         
-    
-    
-    # Parameters["rule_type"]  = P["rule_type"]
-
-
-    # Parameters["file_name"] = P["file_name"]
-    # """ Solver """   
-    # Parameters["solver"]  = P["solver"]
-
-    # """ multi-period-periods"""
-    # Parameters["periods"] = P["periods"]
     
     # """ Approximation """
     if Parameters["approx"] == 0:
         Parameters["approx"] = None
         
-    # Parameters["class_min"] = P["class_min"]    
-    # Parameters["class_max"] = P["class_max"]
-    # Parameters["premium_type"] = P["premium_type"]
-    
-    
     if Parameters["consol"] == 0:
         Parameters["consol"] = False
     else:
         Parameters["consol"] = True
-        
-  
-    
+
+    if Parameters["observable"] == "True" or Parameters["observable"] == "T":
+        Parameters["observable"] = True
+    else:
+        Parameters["observable"] = False        
     
     return Parameters
 

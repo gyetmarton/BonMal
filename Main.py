@@ -10,12 +10,7 @@ import util.general as general
 # import solver_parameters
 import time
 
-
 start_time = time.time()
-
-
-#solver_parameters.pGurobi.Timelimit(value = 3600*10)
-#solver_parameters.pGurobi.ConsolOutput(1)
 
 # Import parameters
 Parameters = parameter_read.exec()
@@ -24,12 +19,5 @@ Parameters = parameter_read.exec()
 Result = general.run(Parameters)
 
 print("time: ", round(time.time()-start_time, 2))
-
-
-# for each in Result:
-#     print(each, Result[each])
-
-
-#print(OP)
 
 

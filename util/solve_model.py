@@ -80,7 +80,7 @@ class Optimise_joint():
     
     def build_observable_model(self, Parameters):
         """ set up a model, where the observable parameters are also known """
-        import backend_PulP_st_TR_obs
+        import backend.stationer_observe
         
         self.Epsilon = set()
 
@@ -91,19 +91,19 @@ class Optimise_joint():
         
         self.Epsilon = list(self.Epsilon)
        
-        self.model = backend_PulP_st_TR_obs.Setup_Joint_Model(Parameters, self.Types, 
-                                                               self.J, self.Epsilon, Parameters['Obs_claims'])
+        self.model = backend.stationer_observe.Setup_Joint_Model(Parameters, self.Types, 
+                                                               self.J, self.Epsilon)
         
     
     
     def exec(self, Parameters):
         
-        if "observable" not in Parameters or Parameters["observable"] == "False":
+        if Parameters["observable"] == False:
             self.build_Epsilon(Parameters)
             self.build_model(Parameters)
         else:
-            
-            self.build_observable_model()
+            print("ASD")
+            self.build_observable_model(Parameters)
             
         
         
